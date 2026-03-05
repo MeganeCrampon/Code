@@ -1,0 +1,13 @@
+playlist = ["A", "B", "C", "D", "E"]
+# Retirer "C"
+playlist.remove("C")
+print(playlist)
+# Supprimer élément à index 0
+del playlist[0]
+print(playlist)
+# Retirer et récupérer dernier
+dernier = playlist.pop(2)
+print(dernier, playlist)
+# Vider
+playlist.clear()
+print(playlist)

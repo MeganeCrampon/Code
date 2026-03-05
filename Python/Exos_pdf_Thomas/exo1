@@ -1,0 +1,16 @@
+durees = [180, 250, 135, 400]
+
+def calculer_stats(durees):
+
+    total = sum(durees)
+    minutes = total // 60
+    secondes = total % 60
+
+    nb_paires = 0
+    for d in durees:
+        if d % 2 == 0:
+            nb_paires += 1
+
+    return (minutes, secondes, nb_paires)
+
+print(calculer_stats(durees))

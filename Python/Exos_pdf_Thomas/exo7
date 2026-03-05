@@ -1,0 +1,12 @@
+biblio = {}
+
+biblio['Song1'] = {'artiste': 'A1', 'duree': 180}
+biblio['Song2'] = {'artiste': 'A2', 'duree': 240}
+biblio['Song3'] = {'artiste': 'A3', 'duree': 200}
+
+for titre in biblio.keys():
+    print(titre)
+
+# Durée totale
+durees = [data['duree'] for data in biblio.values()]
+print(f"Total: {sum(durees)}s")

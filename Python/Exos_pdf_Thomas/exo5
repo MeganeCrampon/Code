@@ -1,0 +1,11 @@
+class Piste:
+    def __init__(self, titre, artiste, duree):
+        self.titre = titre
+        self.artiste = artiste
+        self.duree = duree
+
+    def __str__(self):
+        return f'{self.titre} - {self.artiste} ({self.duree}s)'
+
+p = Piste("Imagine", "Lennon", 183)
+print(p)

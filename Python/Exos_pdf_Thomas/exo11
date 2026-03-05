@@ -1,0 +1,18 @@
+import random
+
+biblio = {'S1': {}, 'S2': {}, 'S3': {}, 'S4': {}, 'S5': {}}
+
+def playlist_aleatoire(biblio, n=3):
+    titres = list(biblio.keys())
+    if len(titres) < n:
+        return titres
+    
+    selection = []
+    for _ in range(n):
+        titre = random.choice(titres)
+        selection.append(titre)
+        titres.remove(titre) # Éviter doublons
+    return selection
+
+# Test
+print(playlist_aleatoire(biblio, 3))

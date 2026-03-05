@@ -1,0 +1,16 @@
+class Piste:
+    def __init__(self, titre, artiste, duree):
+        self.titre = titre
+        self.artiste = artiste
+        self.duree = duree
+
+    def __str__(self):
+        return f'{self.titre} - {self.artiste} ({self.duree}s)'
+
+class Lecteur(Piste):
+    def __init__(self, titre, artiste, duree, volume=0.5):
+        super().__init__(titre, artiste, duree)
+        self.volume = volume
+
+l = Lecteur("Test", "Artiste", 200, 0.8)
+print(l.titre, l.volume) # Test 0.8

@@ -1,0 +1,67 @@
+body {
+    background-color: #fac7e0;
+    font-family: 'Segoe UI', sans-serif; /* Une police plus moderne */
+    display: flex;
+    flex-direction: column; /* Aligner les éléments verticalement */
+    align-items: center;    /* Centrer horizontalement */
+    padding-top: 50px;
+}
+
+h1 {
+    color: #490b20;
+    margin-bottom: 30px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+#entree {
+    padding: 10px;
+    border: 2px solid #dd8da8;
+    border-radius: 6px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s;
+    width: 150px;
+    margin-bottom: 10px;
+}
+#entree:focus {
+    border-color: #e27b9a;
+    box-shadow: 0 0 8px rgba(226, 123, 154, 0.4);
+    width: 130px;
+}
+
+#monBouton {
+    background-color: #e27b9a;
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    padding:10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.plus {
+    color: #cc1212;
+    font-weight: bold;
+    font-size: 20px;
+}
+.moins {
+    color: #669be0;
+    font-weight: bold;
+    font-size: 20px;
+}
+.gagne {
+    color: #65d16e;
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+}

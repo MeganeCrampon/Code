@@ -1,0 +1,20 @@
+def menu():
+    while True:
+        print("1. Ajouter")
+        print("2. Lister")
+        print("3. Stats")
+        print("4. Quitter")
+        choix = input("Choix: ").strip()
+
+        if choix == "1":
+            print("Ajout...")
+        elif choix == "2":
+            print("Liste...")
+        elif choix == "3":
+            print("Stats...")
+        elif choix == "4":
+            print("Au revoir")
+            exit()
+        else:
+            print("Invalide")
+menu()

@@ -1,0 +1,13 @@
+def demander_duree():
+    while True:
+        try :
+            duree = int((input("Durée (s): ")))
+            if duree < 0:
+                print("Doit être positif")
+                continue
+        ______ duree
+        ______ ValueError:
+            print("Nombre entier requis")
+        
+d = demander_duree()
+print(f"Durée validée: {d}s")

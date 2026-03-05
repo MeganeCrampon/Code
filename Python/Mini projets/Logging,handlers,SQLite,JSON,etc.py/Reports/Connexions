@@ -1,0 +1,51 @@
+2026-02-25 21:44:08,862 | [INFO] | Line: 81 | Authentication system starts
+2026-02-25 21:44:10,795 | [INFO] | Line: 34 | User login atempt for : Caca
+2026-02-25 21:44:10,795 | [WARNING] | Line: 38 | Unknown user : Caca
+2026-02-25 21:47:50,941 | [INFO] | Line: 81 | Authentication system starts
+2026-02-25 21:47:53,760 | [INFO] | Line: 34 | User login atempt for : Thomas
+2026-02-25 21:48:07,026 | [INFO] | Line: 68 | Access granted for: Thomas
+2026-02-25 21:48:11,526 | [INFO] | Line: 81 | Authentication system starts
+2026-02-25 21:48:14,411 | [INFO] | Line: 34 | User login atempt for : Megane
+2026-02-25 21:48:21,254 | [WARNING] | Line: 73 | Megane did not entered the right password. Attempts = 1
+2026-02-25 21:48:28,474 | [INFO] | Line: 68 | Access granted for: Megane
+2026-02-25 21:48:35,978 | [INFO] | Line: 81 | Authentication system starts
+2026-02-25 21:48:38,421 | [INFO] | Line: 34 | User login atempt for : Caca
+2026-02-25 21:48:38,421 | [WARNING] | Line: 38 | Unknown user : Caca
+2026-02-25 21:48:40,629 | [INFO] | Line: 41 | The user exit the program.
+2026-02-25 21:48:48,493 | [INFO] | Line: 81 | Authentication system starts
+2026-02-25 21:48:51,011 | [INFO] | Line: 34 | User login atempt for : Caca
+2026-02-25 21:48:51,011 | [WARNING] | Line: 38 | Unknown user : Caca
+2026-02-25 21:48:53,533 | [INFO] | Line: 45 | Caca refused to register.
+2026-02-25 21:48:53,534 | [WARNING] | Line: 38 | Unknown user : Caca
+2026-02-25 21:48:56,353 | [INFO] | Line: 48 | Caca try to register.
+2026-02-25 21:49:00,130 | [INFO] | Line: 56 | Caca is now registered.
+2026-02-25 21:49:03,357 | [INFO] | Line: 68 | Access granted for: Caca
+2026-02-26 09:39:09,738 | [INFO] | Line: 94 | Authentication system starts
+2026-02-26 09:39:16,165 | [INFO] | Line: 46 | User login atempt for : Megane
+2026-02-26 09:39:18,971 | [INFO] | Line: 81 | Access granted for: Megane
+2026-02-26 09:39:29,931 | [INFO] | Line: 94 | Authentication system starts
+2026-02-26 09:39:34,451 | [INFO] | Line: 46 | User login atempt for : Caca
+2026-02-26 09:39:34,451 | [WARNING] | Line: 50 | Unknown user : Caca
+2026-02-26 09:39:36,726 | [INFO] | Line: 60 | Caca try to register.
+2026-02-26 09:39:39,470 | [INFO] | Line: 69 | Caca is now registered.
+2026-02-26 09:39:44,137 | [INFO] | Line: 81 | Access granted for: Caca
+2026-02-26 09:41:51,479 | [INFO] | Line: 96 | Authentication system starts
+2026-02-26 09:41:56,102 | [INFO] | Line: 48 | User login atempt for : Mireille
+2026-02-26 09:41:56,102 | [WARNING] | Line: 52 | Unknown user : Mireille
+2026-02-26 09:41:58,540 | [INFO] | Line: 62 | Mireille try to register.
+2026-02-26 09:42:01,199 | [INFO] | Line: 71 | Mireille is now registered.
+2026-02-26 09:52:30,393 | [INFO] | Line: 96 | Authentication system starts
+2026-02-26 09:52:41,557 | [INFO] | Line: 48 | User login atempt for : Thomas
+2026-02-26 09:52:45,206 | [WARNING] | Line: 88 | Thomas did not entered the right password. Attempts = 1
+2026-02-26 09:52:46,165 | [WARNING] | Line: 88 | Thomas did not entered the right password. Attempts = 2
+2026-02-26 09:52:47,367 | [WARNING] | Line: 88 | Thomas did not entered the right password. Attempts = 3
+2026-02-26 09:52:47,367 | [WARNING] | Line: 91 | Thomas s account is temporarily suspented after 3 attempts.
+2026-02-26 09:52:59,136 | [INFO] | Line: 96 | Authentication system starts
+2026-02-26 09:53:02,993 | [INFO] | Line: 48 | User login atempt for : Luc
+2026-02-26 09:53:02,993 | [WARNING] | Line: 52 | Unknown user : Luc
+2026-02-26 09:53:05,906 | [INFO] | Line: 62 | Luc try to register.
+2026-02-26 09:53:09,871 | [INFO] | Line: 71 | Luc is now registered.
+2026-02-26 09:53:12,701 | [INFO] | Line: 83 | Access granted for: Luc
+2026-02-26 09:54:20,150 | [INFO] | Line: 81 | Authentication system starts
+2026-02-26 09:54:22,983 | [INFO] | Line: 34 | User login atempt for : Megane
+2026-02-26 09:54:25,436 | [INFO] | Line: 68 | Access granted for: Megane

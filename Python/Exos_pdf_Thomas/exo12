@@ -1,0 +1,18 @@
+from pygame import mixer
+mixer.init()
+import time
+
+def jouer_piste(fichier, volume=0.5):
+    mixer.music.load(fichier)
+    mixer.music.set_volume(volume)
+    mixer.music.play()
+# Attendre fin de lecture
+    while mixer.music.get_busy():
+        time.sleep(0.1)
+
+    print("Lecture terminée")
+
+jouer_piste("Exos_pdf_Thomas/magie_soin.mp3", 0.7)
+
+# Test (nécessite fichier audio)
+# jouer_piste("musique.mp3", 0.7)

@@ -1,0 +1,10 @@
+playlists = []
+# Ajout playlist 1
+nom1 = "Workout"
+pistes1 = ["Song1", "Song2"]
+playlists.append((nom1, pistes1))
+# Ajout playlist 2
+playlists.append(("Relax", ["Song1", "Song2"]))
+# Affichage
+for nom, pistes in playlists:
+    print(f"{nom}: {len(pistes)} pistes")

@@ -1,0 +1,29 @@
+2026-02-25 11:21:26,929 | [INFO] | Ligne: 24 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:21:26,929 | [INFO] | Ligne: 25 | Message: Démarrage du script
+2026-02-25 11:21:35,943 | [INFO] | Ligne: 31 | Message: Sauvegarde en cours...
+2026-02-25 11:24:36,994 | [INFO] | Ligne: 24 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:24:36,994 | [INFO] | Ligne: 25 | Message: Démarrage du script
+2026-02-25 11:24:42,245 | [INFO] | Ligne: 32 | Message: Sauvegarde en cours...
+2026-02-25 11:24:47,923 | [WARNING] | Ligne: 35 | Message: Suppression des fichiers !
+2026-02-25 11:24:56,809 | [INFO] | Ligne: 24 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:24:56,809 | [INFO] | Ligne: 25 | Message: Démarrage du script
+2026-02-25 11:25:03,564 | [INFO] | Ligne: 32 | Message: Sauvegarde en cours...
+2026-02-25 11:25:08,411 | [WARNING] | Ligne: 35 | Message: Suppression des fichiers !
+2026-02-25 11:25:10,883 | [INFO] | Ligne: 38 | Message: Affichage du rapport.
+2026-02-25 11:25:12,465 | [INFO] | Ligne: 41 | Message: Fin de session
+2026-02-25 11:33:19,059 | [INFO] | Ligne: 24 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:33:19,060 | [INFO] | Ligne: 25 | Message: Démarrage du script
+2026-02-25 11:33:26,759 | [INFO] | Ligne: 32 | Message: Sauvegarde en cours...
+2026-02-25 11:33:43,506 | [WARNING] | Ligne: 35 | Message: Suppression des fichiers !
+2026-02-25 11:37:25,116 | [INFO] | Ligne: 29 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:37:25,116 | [INFO] | Ligne: 30 | Message: Démarrage du script
+2026-02-25 11:37:33,244 | [INFO] | Ligne: 37 | Message: Sauvegarde en cours...
+2026-02-25 11:37:40,643 | [WARNING] | Ligne: 40 | Message: Suppression des fichiers !
+2026-02-25 11:37:48,948 | [INFO] | Ligne: 43 | Message: Affichage du rapport.
+2026-02-25 11:37:55,117 | [INFO] | Ligne: 46 | Message: Fin de session
+2026-02-25 11:39:55,899 | [INFO] | Ligne: 29 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:39:55,899 | [INFO] | Ligne: 30 | Message: Démarrage du script
+2026-02-25 11:39:59,253 | [INFO] | Ligne: 38 | Message: Sauvegarde en cours...
+2026-02-25 11:43:34,222 | [INFO] | Ligne: 29 | Message: Le dossier et le fichier sont prêts.
+2026-02-25 11:43:34,222 | [INFO] | Ligne: 30 | Message: Démarrage du script
+2026-02-25 11:43:36,736 | [INFO] | Ligne: 39 | Message: Sauvegarde en cours...

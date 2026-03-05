@@ -1,0 +1,7 @@
+RAPPORT D'IVENTAIRE
+cuillère : 20
+chocolat : 12
+pommes : 10
+jambon : 8
+Gingembre : 7
+café : 2

@@ -1,0 +1,6 @@
+body {
+    transition: background-color 0.8s ease;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Chat ❤️</title>
+    <style>
+        body {
+            background-color: #ffe4e1;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            color: #d02090;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        p { font-size: 1.2rem; }
+
+        .heart {
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .heart:hover {
+            transform: scale(1.2);
+        }
+
+        /* Animation des petits coeurs qui montent */
+        .floating-heart {
+            position: absolute;
+            bottom: -10vh;
+            font-size: 20px;
+            color: #ff69b4;
+            user-select: none;
+            animation: float 4s linear forwards;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-110vh) translateX(calc(-50px + 100px * var(--random)));
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Coucou Chat ! ❤️</h1>
+        <p>J'ai un petit message pour toi...</p>
+        <div class="heart" onclick="createHeart()">🎁</div>
+        <p id="message">Clique sur le cadeau patate !</p>
+    </div>
+
+    <script>
+        const messages = [
+            "Je t'aime fort fort fort patate !❤️",
+            "Merci d'être dans ma vie ✨",
+            "T'es le meilleur copain du monde 🌎",
+            "Je suis fière de toi ! 🥰",
+            "Bah alors, t'es encore là ? 😏"
+        ];
+
+        function createHeart() {
+            // Change le texte
+            const msgElement = document.getElementById('message');
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            msgElement.innerText = randomMsg;
+            
+            // Crée des petits coeurs qui volent
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerText = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.setProperty('--random', Math.random());
+                heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                
+                document.body.appendChild(heart);
+
+                // Supprime le coeur après l'animation
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);
+            }
+        }
+    </script>
+</body>
+</html>

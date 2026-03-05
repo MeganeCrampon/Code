@@ -1,0 +1,9 @@
+2026-02-26 11:40:03,674 | [INFO] | Line: 130 | Authentication system starts
+2026-02-26 11:40:06,134 | [INFO] | Line: 89 | User login atempt for : Megane
+2026-02-26 11:40:07,774 | [INFO] | Line: 116 | Access granted for: Megane
+2026-02-26 11:40:09,240 | [INFO] | Line: 130 | Authentication system starts
+2026-02-26 11:40:12,400 | [INFO] | Line: 89 | User login atempt for : Leon
+2026-02-26 11:40:12,401 | [WARNING] | Line: 94 | Unknown user : Leon
+2026-02-26 11:40:14,756 | [INFO] | Line: 77 | Leon try to register.
+2026-02-26 11:40:17,185 | [INFO] | Line: 85 | Leon is now registered.
+2026-02-26 11:40:18,720 | [INFO] | Line: 116 | Access granted for: Leon

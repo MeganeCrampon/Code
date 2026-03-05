@@ -1,0 +1,8 @@
+class Piste:
+    def __init__(self, titre, artiste, duree):
+        self.titre = titre
+        self.artiste = artiste
+        self.duree = duree
+
+p = Piste("Bohemian", "Queen", 354)
+print(p.titre, p.artiste, p.duree)

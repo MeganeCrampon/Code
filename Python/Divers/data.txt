@@ -1,0 +1,3 @@
+INFO:root:Le dossier est prêt.
+INFO:root:Le dossier est prêt.
+INFO:root:Le dossier est prêt.
