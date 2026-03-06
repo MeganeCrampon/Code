@@ -1,7 +1,7 @@
 import pygame
 import random
 import time
-from Assets.stats_class import Hero, Monstre, Monstre_superieur
+from Assets.stats_class import joueur, Monstre, Monstre_superieur, joueur
 import Assets.sounds as sounds
 import Assets.actions as actions
 pygame.mixer.init()
@@ -31,8 +31,8 @@ if action_entree == "1" :
     time.sleep(2.1)
     print("...une Potion !")
     sounds.potion_inv.play()
-    Hero.inventaire.append("Potion")
-    print(f"Ton Hero.inventaire actuel : {Hero.inventaire}.")
+    joueur.inventaire.append("Potion")
+    print(f"Ton joueur.inventaire actuel : {joueur.inventaire}.")
     print("Tu n'as plus d'autre choix que d'aller voir à Gauche !")
 else :
     print("\nTu décides d'aller directement à Gauche !")
@@ -45,12 +45,12 @@ pygame.mixer.music.play(-1)
 
 # --- DEBUT DES COMBATS ---
 for m in Monstre:
-    if Hero.hp <= 0:
+    if joueur.hp <= 0:
         break
         
     print(f"\n--- Duel contre {m['nom']} ---") 
 
-    while m["hp"] > 0 and Hero.hp > 0:
+    while m["hp"] > 0 and joueur.hp > 0:
         action = input("\n(1) Attaque (2) Soin : ")
 
         if action == "1":
@@ -69,20 +69,20 @@ for m in Monstre:
             # Dégâts de base
             degats_m_bruts = random.randint(m["atk_min"], m["atk_max"])
             # Calcul de la réduction (Dégâts - Armure)
-            degats_m_finaux = degats_m_bruts - Hero.armure
-            Hero.hp -= degats_m_finaux
+            degats_m_finaux = degats_m_bruts - joueur.armure
+            joueur.hp -= degats_m_finaux
             sounds.goblin.play()
-            if Hero.armure > 0:
+            if joueur.armure > 0:
                 print(f"Le {m['nom']} riposte ! -{degats_m_finaux} HP (L'Armure a bloqué {degats_m_bruts - degats_m_finaux}DMG !).")
             else:
                 print(f"Le {m['nom']} riposte ! -{degats_m_finaux} HP.")
      
-            print(f"Tes HP : {max(0, Hero.hp)}")
+            print(f"Tes HP : {max(0, joueur.hp)}")
 
 
-        if 0 < Hero.hp <= Hero.hp_max * 0.2:
+        if 0 < joueur.hp <= joueur.hp_max * 0.2:
             pygame.mixer.music.set_volume(0.3)
-            message = f"attention link ! le {m['nom']} va t'achever..."
+            message = (f"attention link ! le {m['nom']} va t'achever...")
             message_stress = "".join([char.upper() if random.random() > 0.4 else char for char in message])
             tremblement = " " * random.randint(2, 8)
             print(f"{tremblement}   {message_stress}  ")
@@ -96,46 +96,30 @@ for m in Monstre:
         time.sleep(1)
         print(f"\nFélicitations ! Tu as terrassé le {m['nom']} !")
         butin = m["or"]
-        Hero.money += butin
+        joueur.money += butin
         sounds.coin.play() 
-        print(f"Tu ramasses {butin} pièces d'or sur son cadavre. \nTon or actuel : {Hero.money} pièces.")
+        print(f"Tu ramasses {butin} pièces d'or sur son cadavre. \nTon or actuel : {joueur.money} pièces.")
 
         # --- Gain d'XP ---
         time.sleep(1)
         gain_xp = m["xp"]
-        Hero.xp += gain_xp
+        joueur.xp += gain_xp
         print(f"Tu gagnes {gain_xp} XP !")
         actions.lvl_up()
 
     # --- VERIFICATION DE MORT ---
-    if Hero.hp <= 0:
-        pygame.mixer.music.pause()
-        sounds.heart_chan.stop()
-        time.sleep(1)
-        pygame.mixer.music.load(sounds.m_gameover)
-        pygame.mixer.music.play(-1) 
-        print("\nGAME OVER... Tu as péri dans le donjon.")
-        input("\nAppuie sur Entrée pour quitter...")
-        exit()
+    actions.check_alive()
 
 # --- FIN DES COMBATS ---
-if Hero.hp > 0:
-    pygame.mixer.music.fadeout(2000)
-    sounds.heart_chan.stop()
-    time.sleep(1.5)
-    pygame.mixer.music.load(sounds.m_win)
-    pygame.mixer.music.play(-1)
-    pygame.mixer.music.set_volume(1.0)
-    print(f"\nVICTOIRE ! Tu a survécu à cette vague de monstres avec {Hero.hp} HP !")
-    pygame.mixer.music.fadeout(4000)
+actions.battle_end()
 
 # --- LOOT --- 
 time.sleep(3.5)   
 print("\nTiens...un des monstres a fait tomber quelque chose ! \nTu te penches pour regarder et trouves une vieille armure en cuir abîmée. Tu décides de la porter !")
 sounds.recup_item.play()
-Hero.equipement.append("Vielle armure en cuir abîmée")
-Hero.armure += 5
-print(f"Ton armure augmente de 5 ! Ton armure actuelle est de : {Hero.armure}.")
+joueur.equipement.append("Vielle armure en cuir abîmée")
+joueur.armure += 5
+print(f"Ton armure augmente de 5 ! Ton armure actuelle est de : {joueur.armure}.")
 
 # --- SUITE AVENTURE ---
 time.sleep(2.5)

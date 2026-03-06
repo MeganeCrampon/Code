@@ -39,10 +39,12 @@ class Monstre_superieur(Entites) :
 joueur = Hero(nom ="Yuuki", hp=50, hp_max=50, mp=40, mp_max=40, atk_min=10, atk_max=15)
 
 # --- Monstres ---
-gobelin = Monstre(nom ="Gobelin", hp=30, hp_max=30, atk_min=8, atk_max=12, xp=50, money=5)
-orc = Monstre(nom ="Orc", hp=45, hp_max=45, atk_min=10, atk_max=14, xp=80, money=8)
+gobelin = Monstre(nom ="Gobelin", hp=30, hp_max=30, atk_min=8, atk_max=12, xp=20, money=5)
+orc = Monstre(nom ="Orc", hp=45, hp_max=45, atk_min=10, atk_max=14, xp=40, money=8)
 
 # --- Monstres Supérieurs ---
+hobgobelin = Monstre_superieur(nom="Hobgobelin", hp=65, hp_max=65, atk_min=22, atk_max=28, xp=70, money=20)
 
 
 liste_monstres = [gobelin, orc]
+liste_monstres_superieurs = [hobgobelin]
