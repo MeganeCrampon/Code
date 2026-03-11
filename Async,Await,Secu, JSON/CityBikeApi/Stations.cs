@@ -8,5 +8,7 @@ public class Station {
     public int VelosDisponibles { get; set; }
     // Est-ce que la station fonctionne ?
     public bool EstEnService { get; set; }
+    public int CapaciteMax { get; set; }
 }
+
 
