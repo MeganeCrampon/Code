@@ -1,7 +1,9 @@
 using CityBikeApi;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors();
 var app = builder.Build();
+app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 // On crée une petite liste de données factices (comme une mini base de données)
 var mesStations = new List<Station>
@@ -31,7 +33,7 @@ app.MapPost("api/stations/{id}/louer", (int id) =>
         return Results.Ok($"Velo loué ! Il en reste {stationTrouvee.VelosDisponibles}.");
     }
     else {
-        return Results.BadRequest("Action impossible : Plus de vélos ou station hors service !");
+        return Results.BadRequest("Action impossible : Plus de vélos ou station hors service.");
     }
 });
 
