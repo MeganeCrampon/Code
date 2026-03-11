@@ -1,8 +1,7 @@
 async function chargerStations() {
     const reponse = await fetch("http://localhost:5191/api/stations");
     const donnees = await reponse.json();
-
-    // Envoyer à la fonction d'affichage
+    
     afficherStations(donnees);
 }
 
