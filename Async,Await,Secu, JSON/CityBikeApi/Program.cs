@@ -5,7 +5,6 @@ builder.Services.AddCors();
 var app = builder.Build();
 app.UseCors(policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-// On crée une petite liste de données factices (comme une mini base de données)
 var mesStations = new List<Station>
 {
     new Station { Id = 1, Nom = "Gare du Nord", VelosDisponibles = 12, CapaciteMax = 15, EstEnService = true },
@@ -22,7 +21,7 @@ app.MapGet("/api/stations/{id}", (int id) => {
     return stationTrouvee;
 });
 
-app.MapPost("api/stations/{id}/louer", (int id) => 
+app.MapPost("/api/stations/{id}/louer", (int id) => 
 {   var stationTrouvee = mesStations.FirstOrDefault(s => s.Id == id);
 
     if (stationTrouvee == null) {
@@ -37,10 +36,9 @@ app.MapPost("api/stations/{id}/louer", (int id) =>
     }
 });
 
-app.MapPost("api/stations/{id}/rendre", (int id) =>
+app.MapPost("/api/stations/{id}/rendre", (int id) =>
 {
     var stationTrouvee = mesStations.FirstOrDefault(s => s.Id == id);
-
     if (stationTrouvee == null) {
         return Results.NotFound("Cette station n'existe pas.");
     }
@@ -53,4 +51,16 @@ app.MapPost("api/stations/{id}/rendre", (int id) =>
     }
 });
 
+app.MapPost("/api/stations/{id}/toggle", (int id) => 
+{   
+    var station = mesStations.FirstOrDefault(s => s.Id == id);
+    if (station == null)
+    {
+        return Results.NotFound();
+    }
+    station.EstEnService = !station.EstEnService;
+    return Results.Ok(station);
+});
+
+app.UseCors();
 app.Run();
