@@ -3,9 +3,9 @@ namespace SiteLocaVelos.Models
     public class Utilisateur
     {
         public int Id { get; set; }
-        public int Nom { get; }
-        public string Email { get; } = string.Empty;
-        public int Mdp { get;}
-        public int DateInscrip { get;}       
+        public string Nom { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Mdp { get; set; } = string.Empty;
+        public DateTime DateInscrip { get; set; } = DateTime.Now;       
     }
 }
