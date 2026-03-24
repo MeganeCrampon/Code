@@ -17,15 +17,15 @@ while (true)
         Console.WriteLine($"{p.Id}: {p.Nom} ({p.Prix}€) - Stock : {p.QuantiteDispo}");
     }
 
-    string input = Console.ReadLine("Quel est l'ID du produit que vous souhaitez ajouter au panier ?");
+    // PRODUIT A AJOUTER
+    Console.WriteLine("Quel est l'ID du produit que vous souhaitez ajouter au panier ?");
+    string inputId = Console.ReadLine();
 
-    if (input == "0") break;
-
-    else if (int.TryParse(input, out int idChoisi))
+    if (inputId == "0") break;
+    else if (int.TryParse(inputId, out int idChoisi))
     {
         // [cite_start] ?
         var produitTrouve = catalogue.Find(p => p.Id == idChoisi);
-
        /* 
         if (produitTrouve != null)
         {
@@ -36,15 +36,38 @@ while (true)
             Console.WriteLine("Désolé, l'ID entré est invalide.");
         }
         */
+        if(produitTrouve == null)
+        { 
+            Console.WriteLine($"Désolé, l'ID {idChoisi} n'a pas été trouvé");
+            continue;  
+        }   
 
-        if(produitTrouve == null) 
-            Console.WriteLine($"Désolé, l'ID {produitTrouve.Id} n'a pas été trouvé");
-            return;  
+        // QUANTITE A AJOUTER
+        Console.WriteLine($"Quelle quantité de {produitTrouve.Nom} voulez vous ajouter ?");
+        string inputQuant = Console.ReadLine();
 
-        panier.Add(produitTrouve);
-        Console.WriteLine($"{produitTrouve} a été ajouté au panier.");  
+        if (inputQuant == "0")
+        {
+            Console.WriteLine($"Désolé, vous devez ajouter au moins un exemple au panier.");
+        }
+        else if (int.TryParse(inputQuant, out int quantChoisi))
+        {
+            if (quantChoisi > produitTrouve.QuantitéDispo)
+            {
+                Console.WriteLine($"Désolé, il n'y a que {produitTrouve.QuantiteDispo} articles en stock.");
+            }
+            else 
+            {
+                for (int i = 0; i < quantChoisi; i++)
+                {
+                    panier.Add(produitTrouve);
+                }
+                Console.WriteLine($"{quantChoisi} {produitTrouve.Nom} a été ajouté au panier");
+                produitTrouve.QuantiteDispo -= quantChoisi; // Deduire au stock
+            }
+        }
     }
-}
+};
 
 int prixTotal = 0;
     foreach (var p in panier)
@@ -56,5 +79,3 @@ int prixTotal = 0;
         prixTotal = prixTotal * 0.90; // remise de 10%
     }
 Console.WriteLine("Total : " + prixTotal);
-
-
