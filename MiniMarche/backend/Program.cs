@@ -1,5 +1,11 @@
 using System.ComponentModel.Design.Serialization;
 
+var builder = WebApplication.CreateBuilder(args);
+// Autoriser le navigateur à laisser Vue.js parler au C#
+builder.Services.AddCors(obj => obj.AddDefaultPolicy(p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+var app = builder.Build();
+app.UseCors();
+
 var catalogue = new List<Produit>
 {
     new Produit { Id = 1, Nom = "Pomme", Prix = 0.80, QuantitéDispo = 15 },
@@ -63,7 +69,7 @@ while (true)
                     panier.Add(produitTrouve);
                 }
                 Console.WriteLine($"{quantChoisi} {produitTrouve.Nom} a été ajouté au panier");
-                produitTrouve.QuantiteDispo -= quantChoisi; // Deduire au stock
+                produitTrouve.QuantiteDispo -= quantChoisi; // Deduire du stock
             }
         }
     }
@@ -79,3 +85,7 @@ int prixTotal = 0;
         prixTotal = prixTotal * 0.90; // remise de 10%
     }
 Console.WriteLine("Total : " + prixTotal);
+
+// Endpoint pour envoyer le catalogue à Vue.js
+app.MapGet("/api/produits", () => catalogue);
+app.Run();
