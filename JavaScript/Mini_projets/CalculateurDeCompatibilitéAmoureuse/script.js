@@ -35,7 +35,7 @@ form.addEventListener('submit', (event) => {
         message = `En vrai si tu farm quelques années ça peut passer !`;
         launchFireworks("🙃");
     } else if (percentage < 50) {
-        message = `C'est pas trop mal barré, ça peut marcher avec de la patience!`;
+        message = `C'est pas trop mal barré, ça peut marcher avec de la patience !`;
         launchFireworks("🙂");
     } else if (percentage < 60) {
         message = `Franchement ça peut marcher, faut juste pas être trop pressé !`;
@@ -47,7 +47,7 @@ form.addEventListener('submit', (event) => {
         message = `Ouah c'est sur la bonne voie, y'a moyen que ça marche !`;
         launchFireworks("😇");
     } else if (percentage < 90) {
-        message = `Mais carrément, prend ton courage à deux main et va déclarer ta flamme !`;
+        message = `Mais carrément, prend ton courage à deux mains et va déclarer ta flamme !`;
         launchFireworks("🥰");
     } else if (percentage < 100) {
         message = `C'est la réussite assurée, fonce c'est le destin !`;
@@ -68,7 +68,7 @@ function launchFireworks(emoji) {
     const fireworkdsDiv = document.createElement('div');
     fireworkdsDiv.classList.add('emoji-burst');
     document.body.appendChild(fireworkdsDiv);
-
+    
     const rect1 = name1Input.getBoundingClientRect();
     const rect2 = name2Input.getBoundingClientRect();
     const centerX = (rect1.left + rect1.right + rect2.left + rect2.right) / 4;

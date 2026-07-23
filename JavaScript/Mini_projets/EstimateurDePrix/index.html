@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimateur de prix</title>
+</head>
+<body>
+
+    <h1>Estimons de prix de ta peluche !</h1>
+    <form id="plushieEstimation">
+
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" placeholder="Nom" required>
+        <label for="time">Temps</label>
+        <input type="text" id="time" name="time" placeholder="Temps en heure" required>
+        <label for="materialPrice">Prix du matériel</label>
+        <input type="text" id="materialPrice" name="materialPrice" placeholder="Prix de matériel" required>
+        <label for="patternPrice">Prix du pattern</label>
+        <input type="text" id="patternPrice" name="patternPrice"  placeholder="Prix du modèle">
+
+        <button type="submit">Estimer</button>
+    </form>
+
+    <div id="Result"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
