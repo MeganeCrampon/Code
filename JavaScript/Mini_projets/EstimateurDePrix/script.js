@@ -1,22 +1,41 @@
-const form = document.getElementById("compatibilityForm");
+const form = document.getElementById("plushieEstimation");
+const currency = document.getElementById("currency");
 const name = document.getElementById("name");
-const time = document.getElementById("time");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
 const materialPrice = document.getElementById("materialPrice");
 const patternPrice = document.getElementById("patternPrice");
 const result = document.getElementById("result");
 
-function hoursToMinutes(time) {
-    let hours = Number(time.value).toFixed(1);
-    return (hours * 60).toFixed(1);
-}
+const convertionRate = {
+EUR: 1,
+USD: 1.08,
+GBP: 0.85
+};
+
+const currencySymbol = {
+EUR: '€',
+USD: '$',
+GBP: '£'
+};
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    let minutes = hoursToMinutes(time).toFixed(1);
-    let timePrice =  ((minutes * 9,8) /60).toFixed(1);
+    const totalHours = Number(hours.value) + (Number(minutes.value) / 60);
+    const timePrice = totalHours * 10;
+    const materialPriceValue = Number(materialPrice.value) || 0;
+    const patternPriceValue = Number(patternPrice.value) || 0;
 
-    let totalPrice = (timePrice + materialPrice + patternPrice).toFixed(1); // FAIRE QUE PATTERN PUISSE ETRE IGNORE
+    const totalPriceEUR = Math.ceil(timePrice + materialPriceValue + patternPriceValue);
 
-    result.textContent = `Ta peluche ${name} devrait coûter environ ${totalPrice} !`
+    const currencyChoice = currency.value;
+    const convertedTotalPrice = Math.ceil(totalPriceEUR * convertionRate[currencyChoice]);
+    const currencySymbolChoice = currencySymbol[currencyChoice];
+
+    result.textContent = `Ta peluche ${name.value} devrait coûter environ ${convertedTotalPrice}${currencySymbolChoice} ! ✨`
+});
+
+currency.addEventListener('change', () => {
+    form.requestSubmit();
 });

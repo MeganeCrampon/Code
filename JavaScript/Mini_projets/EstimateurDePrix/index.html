@@ -8,21 +8,38 @@
 <body>
 
     <h1>Estimons de prix de ta peluche !</h1>
-    <form id="plushieEstimation">
+    <div class="currency-selector">
+        <label for="currency">Devise</label>
+        <select id="currency">
+            <option value="EUR">€ EUR</option>
+            <option value="USD">$ USD</option>
+            <option value="GBP">£ GBP</option>
+        </select>
+    </div>
 
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" placeholder="Nom" required>
-        <label for="time">Temps</label>
-        <input type="text" id="time" name="time" placeholder="Temps en heure" required>
-        <label for="materialPrice">Prix du matériel</label>
-        <input type="text" id="materialPrice" name="materialPrice" placeholder="Prix de matériel" required>
-        <label for="patternPrice">Prix du pattern</label>
-        <input type="text" id="patternPrice" name="patternPrice"  placeholder="Prix du modèle">
+    <div class="content">
 
-        <button type="submit">Estimer</button>
-    </form>
+        <form id="plushieEstimation">
 
-    <div id="Result"></div>
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" placeholder="Nom" required>
+            <label for="hours">Temps (heures)</label>
+            <input type="number" id="hours" name="hours" placeholder="Heures">
+            <label for="minutes">Temps (minutes)</label>
+            <input type="number" id="minutes" name="minutes" placeholder="Minutes" max="59">
+            <label for="materialPrice">Prix du matériel</label>
+            <input type="number" id="materialPrice" name="materialPrice" placeholder="Prix de matériel" required>
+            <label for="patternPrice">Prix du pattern</label>
+            <input type="number" id="patternPrice" name="patternPrice"  placeholder="Prix du modèle">
+
+            <button type="submit">Estimer</button>
+
+            <link rel="stylesheet" href="style.css">
+        </form>
+
+        <div id="result"></div>
+    
+    </div>
 
     <script src="script.js"></script>
 

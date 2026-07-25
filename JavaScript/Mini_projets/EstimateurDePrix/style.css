@@ -1,0 +1,229 @@
+/* ===== Palette Crochetland25 =====
+  --rose-vif      : #FF4D8D  (accent principal, dynamique)
+  --rose-clair    : #FFB8D4  (dégradés, touches douces)
+  --rose-pale     : #FFF0F6  (fond très clair)
+  --blanc         : #FFFFFF  (cartes)
+  --prune-texte   : #4A1F35  (texte principal)
+  --rose-bordure  : #FFDCEA  (bordures inputs)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #FFE3EF 0%, #FFF0F6 45%, #FFFFFF 100%);
+  color: #4A1F35;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* petites touches décoratives en fond, façon pelotes de laine stylisées */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.35;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+body::before {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #FFB8D4 0%, transparent 70%);
+  top: -60px;
+  left: -60px;
+}
+
+body::after {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, #FF9EC4 0%, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+}
+
+h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 2.1rem;
+  color: #FF4D8D;
+  margin: 0 0 30px 0;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  position: relative;
+  z-index: 1;
+}
+
+.currency-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.currency-selector label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FF4D8D;
+  margin: 0;
+  text-align: left;
+}
+
+.currency-selector select {
+  padding: 8px 32px 8px 12px;
+  border: 2px solid #FFDCEA;
+  border-radius: 12px;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #FFFFFF;
+  color: #4A1F35;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23FF4D8D' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+.currency-selector select:focus {
+  border-color: #FF4D8D;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+form {
+  background: #FFFFFF;
+  border-radius: 26px;
+  padding: 36px 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 32px rgba(255, 77, 141, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 2px solid #FFDCEA;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FF4D8D;
+  text-align: left;
+  margin-bottom: -6px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 12px 16px;
+  border: 2px solid #FFDCEA;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background: #FFF9FC;
+  color: #4A1F35;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input::placeholder {
+  color: #E0A0BE;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #FF4D8D;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(255, 77, 141, 0.15);
+}
+
+/* enlève les flèches moches du input number sur certains navigateurs, garde un style propre */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FF4D8D, #FF7BAA);
+  color: #FFFFFF;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 77, 141, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(255, 77, 141, 0.4);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0) scale(1);
+}
+
+#result {
+  margin-top: 0;
+  max-width: 380px;
+  width: 100%;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'Baloo 2', sans-serif;
+  color: #4A1F35;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FFF0F6, #FFE3EF);
+  border: 2px solid #FFB8D4;
+  box-shadow: 0 6px 18px rgba(255, 77, 141, 0.12);
+}
+
+#result:empty {
+  display: flex;
+}
+
+#result:empty::before {
+  content: "Ton estimation apparaîtra ici ✨";
+  color: #E0A0BE;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+}
