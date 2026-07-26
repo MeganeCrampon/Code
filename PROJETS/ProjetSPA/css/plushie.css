@@ -1,0 +1,51 @@
+/* ===== Styles spécifiques à l'Estimateur de Prix de Peluches ===== */
+
+/* Sélecteur de devise, propre à cette section */
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.currency-selector label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FF4D8D;
+  margin: 0;
+}
+
+.currency-selector select {
+  padding: 8px 32px 8px 12px;
+  border: 2px solid #FFDCEA;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #FFFFFF;
+  color: #4A1F35;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23FF4D8D' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+/* Conteneur qui met le formulaire et le résultat côte à côte */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* Message placeholder spécifique à l'estimateur, tant qu'aucun calcul n'a été fait */
+#priceResult:empty::before {
+  content: attr(data-empty-text);
+}

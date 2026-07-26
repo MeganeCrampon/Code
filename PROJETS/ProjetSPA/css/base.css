@@ -1,0 +1,267 @@
+/* ===== Palette unifiée de la SPA =====
+  --rose-vif      : #FF4D8D  (accent principal)
+  --rose-clair    : #FFB8D4  (dégradés, touches douces)
+  --rose-pale     : #FFF0F6  (fond très clair)
+  --blanc         : #FFFFFF  (cartes)
+  --prune-texte   : #4A1F35  (texte principal)
+  --rose-bordure  : #FFDCEA  (bordures inputs)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #FFE3EF 0%, #FFF0F6 45%, #FFFFFF 100%);
+  color: #4A1F35;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Sélecteur de langue ===== */
+
+.language-selector {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+.language-selector select {
+  padding: 8px 32px 8px 14px;
+  border: 2px solid #FFDCEA;
+  border-radius: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #FFFFFF;
+  color: #4A1F35;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1L5 5L9 1' stroke='%23FF4D8D' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  box-shadow: 0 4px 12px rgba(255, 77, 141, 0.12);
+}
+
+.language-selector select:focus {
+  border-color: #FF4D8D;
+}
+
+/* ===== Navigation principale ===== */
+
+#mainNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 70px 0 36px 0;
+  z-index: 1;
+}
+
+.nav-btn {
+  padding: 12px 22px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: #FFFFFF;
+  color: #B5637F;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 77, 141, 0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 77, 141, 0.2);
+  color: #FF4D8D;
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, #FF4D8D, #FF7BAA);
+  color: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(255, 77, 141, 0.35);
+}
+
+/* ===== Sections des outils (commun) ===== */
+
+.app-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.35s ease;
+}
+
+.app-section[hidden] {
+  display: none;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.app-section h1 {
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 2rem;
+  color: #FF4D8D;
+  margin: 0 0 28px 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* ===== Formulaires (communs aux 3 sections) ===== */
+
+form {
+  background: #FFFFFF;
+  border-radius: 26px;
+  padding: 36px 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 32px rgba(255, 77, 141, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 2px solid #FFDCEA;
+}
+
+form p {
+  font-size: 0.9rem;
+  color: #B5637F;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FF4D8D;
+  text-align: left;
+  margin-bottom: -6px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 12px 16px;
+  border: 2px solid #FFDCEA;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background: #FFF9FC;
+  color: #4A1F35;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input::placeholder {
+  color: #E0A0BE;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #FF4D8D;
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(255, 77, 141, 0.15);
+}
+
+select {
+  padding: 12px 16px;
+  border: 2px solid #FFDCEA;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  background: #FFF9FC;
+  color: #4A1F35;
+  cursor: pointer;
+  outline: none;
+}
+
+select:focus {
+  border-color: #FF4D8D;
+}
+
+button[type="submit"] {
+  margin-top: 8px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FF4D8D, #FF7BAA);
+  color: #FFFFFF;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(255, 77, 141, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 10px 22px rgba(255, 77, 141, 0.4);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0) scale(1);
+}
+
+/* ===== Zones de résultat (communes aux 3 sections) ===== */
+
+#converterResult,
+#compatibilityResult,
+#priceResult {
+  margin-top: 24px;
+  max-width: 420px;
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-family: 'Baloo 2', sans-serif;
+  color: #4A1F35;
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FFF0F6, #FFE3EF);
+  border: 2px solid #FFB8D4;
+  box-shadow: 0 6px 18px rgba(255, 77, 141, 0.12);
+}
+
+#converterResult:empty::before,
+#compatibilityResult:empty::before,
+#priceResult:empty::before {
+  content: "✨";
+  color: #E0A0BE;
+  font-size: 1.4rem;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 600px) {
+  #mainNav {
+    margin-top: 60px;
+  }
+
+  .language-selector {
+    top: 12px;
+    left: 12px;
+  }
+
+  form {
+    padding: 28px 22px;
+  }
+}
