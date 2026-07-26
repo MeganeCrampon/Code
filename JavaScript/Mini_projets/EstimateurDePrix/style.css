@@ -196,7 +196,7 @@ button[type="submit"]:active {
   transform: translateY(0) scale(1);
 }
 
-#result {
+#priceResult {
   margin-top: 0;
   max-width: 380px;
   width: 100%;
@@ -216,11 +216,11 @@ button[type="submit"]:active {
   box-shadow: 0 6px 18px rgba(255, 77, 141, 0.12);
 }
 
-#result:empty {
+#priceResult:empty {
   display: flex;
 }
 
-#result:empty::before {
+#priceResult:empty::before {
   content: "Ton estimation apparaîtra ici ✨";
   color: #E0A0BE;
   font-family: 'Nunito', sans-serif;

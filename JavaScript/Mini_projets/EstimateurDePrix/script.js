@@ -5,7 +5,7 @@ const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const materialPrice = document.getElementById("materialPrice");
 const patternPrice = document.getElementById("patternPrice");
-const result = document.getElementById("result");
+const result = document.getElementById("priceResult");
 
 const convertionRate = {
 EUR: 1,

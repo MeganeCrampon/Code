@@ -1,7 +1,7 @@
-const form=document.getElementById("tempForm");
+const form=document.getElementById("converterForm");
 const entree=document.getElementById("inputTemperature");
 const unit=document.getElementById("unit");
-const result=document.getElementById("result");
+const result=document.getElementById("ConverterResult");
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();

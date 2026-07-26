@@ -1,7 +1,7 @@
 const form = document.getElementById("compatibilityForm");
 const name1Input = document.getElementById("name1");
 const name2Input = document.getElementById("name2");
-const result = document.getElementById("result");
+const result = document.getElementById("compatibilityResult");
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
